@@ -1,14 +1,32 @@
 const users = [
-    { nome: "João", tecnologias: ["Html", "CSS",] },
+    { nome: "João", tecnologias: ["CSS", "HTML"] },
     { nome: "Gabriel", tecnologias: ["Node.js", "React"] },
     { nome: "Paulo", tecnologias: ["Python", "C++"] },
-    { nome: "Pedro", tecnologias: ["C#", "Go"] }
+    { nome: "Pedro", tecnologias: ["C#", "Go", "CSS"] }
 ]
 
-function contausuarios(usuario) {
-    for (let i = 0; i < usuario.length; i++) {
-        console.log( `${users[i].nome} trabalha com ${users[i].tecnologias}` );
+for (let i = 0; i < users.length; i++) {
+    const usuarioUsaCSS = checaSeUsuarioUsaCSS(users[i]);
+    if (usuarioUsaCSS) {
+        console.log( `O usuário ${users[i].nome} trabalha com CSS` )
+    
     }
-}
 
-const usuario = contausuarios(users)
+// imprimir mensagem na tela das tecnologias que o usuário usa
+    // console.log( `${users[i].nome} trabalha com ${users[i].tecnologias.join(', ')}` );
+    }
+
+function checaSeUsuarioUsaCSS (usuario) {
+    //primeira tentativa de buscar CSS nas tecnologias
+        // if (usuario.tecnologias == "CSS") {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+    //resposta encontrada        
+    for (let tecnologia of usuario.tecnologias) {
+        if (tecnologia == "CSS") return true
+    }
+
+    return false
+}

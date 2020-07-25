@@ -1,5 +1,8 @@
 {
     "sync.quietSync": true,
     "sync.autoDownload": true,
-    "sync.autoUpload": true
+    "sync.autoUpload": true,
+    "cSpell.words": [
+        "usuario"
+    ]
 }
